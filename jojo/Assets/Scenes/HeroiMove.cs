@@ -8,7 +8,7 @@ public class HeroiMove : MonoBehaviour {
     public bool face = true;
     public Transform HeroiT;
     public float vel = 2.5f;
-    public float force = 6.5f;
+    public float force = 3.5f;
     public Rigidbody2D heroiRB;
     public bool liberapulo = false;
     public Animator anim;
@@ -68,6 +68,9 @@ public class HeroiMove : MonoBehaviour {
                 if (Input.GetKeyDown(KeyCode.Space) && liberapulo == true)
                 {
                     heroiRB.AddForce(new Vector2(0, force), ForceMode2D.Impulse);
+
+                    anim.SetBool("pulolateral", true);
+                    anim.SetBool("indle", false);
                 }
             }
             
@@ -106,6 +109,9 @@ public class HeroiMove : MonoBehaviour {
         if(outro.gameObject.CompareTag("chao"))
         {
             liberapulo = true;
+
+            anim.SetBool("pulolateral", false);
+            anim.SetBool("indle", true);
         }
     }
 
