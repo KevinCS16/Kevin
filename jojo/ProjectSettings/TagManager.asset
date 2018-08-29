@@ -9,6 +9,8 @@ TagManager:
   - moeda
   - bombs
   - bomba
+  - magnet
+  - magnetitem
   layers:
   - Default
   - TransparentFX
